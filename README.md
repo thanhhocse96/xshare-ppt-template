@@ -3,7 +3,7 @@
 
 ## Thông tin về phiên bản ứng dụng
 
-Sử dụng PHP MVC  
+Hiện thực XSHARE sử dụng PHP MVC  
 
 ## Sử dụng để làm gì?
 
@@ -25,11 +25,15 @@ Bản đầy đủ giao diện và chức năng:
 
 Hồ Quang Thanh - thanh.hoquangcse96@gmail.com
 
+
 Huỳnh Hồng Hiển
+
 
 Lê Xuân Hải
 
+
 Hồ Ngọc Sơn
+
 
 ## License
  
