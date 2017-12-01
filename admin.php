@@ -17,6 +17,6 @@
     require_once PATH_SYSTEM . '/core/XS_Controller.php';
 
     //Run Controller
-    $controller = new XS_Controller;
+    $controller = new XS_Controller();
     $controller->load($segment['controller'], $segment['action']);
 ?>
