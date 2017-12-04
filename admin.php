@@ -2,6 +2,10 @@
     define('PATH_SYSTEM', __DIR__ . '/system');
     define('PATH_APP', __DIR__ . '/admin');
 
+    include_once PATH_SYSTEM . 'core/XS_Common.php'
+
+    XS_load();
+    
     require(PATH_SYSTEM . '/config/config.php');
 
     $segment = array(
@@ -19,4 +23,7 @@
     //Run Controller
     $controller = new XS_Controller();
     $controller->load($segment['controller'], $segment['action']);
+
+
+    
 ?>
