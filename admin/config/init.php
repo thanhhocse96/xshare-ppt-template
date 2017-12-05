@@ -1,4 +1,5 @@
 <?php
+
 return array(
     'default_controller' => 'index', //default controller
     'default_action' => 'index', //default action
