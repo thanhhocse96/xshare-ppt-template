@@ -62,7 +62,7 @@ function getCookie(cname) {
     return "";
 }
 
-$('#myForm')
+$('#register')
     .ajaxForm({
         url: 'myscript.php', // or whatever
         dataType: 'json',
