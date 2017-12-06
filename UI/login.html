@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/js-team.js"></script>
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
     <title>Login - XSHARE</title>
 </head>
@@ -20,39 +22,40 @@
                         <img src="./src/images/Logo_white.png" class="sign-in-logo" alt="XShare logo">
                     </a>
                 </center>
-                <form action="#" method="post" class="form-login">
-                    <div class="icon1">
-                        <input placeholder="Email" style="color:black;" name="mail" type="email" required="" class="login-email">
-                    </div>
+                
+                <div class="icon1">
+                    <input id="username" placeholder="Email" style="color:black;" name="mail" type="email" required="" class="login-email">
+                </div>
 
-                    <div class="icon2">
-                        <input placeholder="Password" style="color:black;" name="Password" type="password" required="" class="login-pass">
-                    </div>
-                    <label class="checkbox-inline anim">
-                        <input type="checkbox" class="checkbox">Remember Me
-                    </label>
-                    <br>
-                    <a href="#" style="color:black;">Forget Password!</a>
-                    <div class="clear"></div>
-                    <div style="margin: 20px;"> 
-                        <a href="./sign-up.html" class="btn btn-default" style="color:black; margin-right:20px;">Register</a>
-                        <input type="submit" class="btn btn-default login-btn" value="Sign in">
-                    </div>
-                    <div>
-                        <center>
-                            <button class="loginBtn loginBtn--facebook">
-                                Login with Facebook
-                            </button>
-                        </center>
-                    </div> 
-                    <div>
-                        <center>
-                            <button class="loginBtn loginBtn--google">
-                             Login with Google
-                            </button>
-                        </center>
-                    </div>
-                </form>
+                <div class="icon2">
+                    <input id="password" placeholder="Password" style="color:black;" name="Password" type="password" required="" class="login-pass">
+                </div>
+                <label class="checkbox-inline anim">
+                    <input id="remember" type="checkbox" class="checkbox">Remember Me
+                </label>
+                <br>
+                <a href="#" style="color:black;">Forget Password!</a>
+                <div class="clear"></div>
+                <div style="margin: 20px;"> 
+                    <a href="./sign-up.html" class="btn btn-default" style="color:black; margin-right:20px;">Register</a>
+                    <!-- <input type="submit" class="btn btn-default login-btn" value="Sign in"> -->
+                    <button id="signIn" class="btn btn-default login-btn">Sign In</button>
+                </div>
+                <div>
+                    <center>
+                        <button class="loginBtn loginBtn--facebook">
+                            Login with Facebook
+                        </button>
+                    </center>
+                </div> 
+                <div>
+                    <center>
+                        <button class="loginBtn loginBtn--google">
+                            Login with Google
+                        </button>
+                    </center>
+                </div>
+
             </div>
         </div>
 
