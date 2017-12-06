@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/js-team.js"></script>
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
     <title>Create new account - XSHARE</title>
 </head>
@@ -20,22 +22,23 @@
                         <img src="./src/images/Logo_white.png" class="sign-in-logo" alt="X share sign up logo">
                     </a>
                 </center>
-                <form id="register" action="#" method="post" class="form-login">
+                <div class="form-login">
                     <div>
-                        <input placeholder="First Name" style="color:black;" name="firstname" type="text" required class="infobox1">
-                        <input placeholder="Last Name" style="color:black;" name="lastname" type="text" required class="infobox2">
+                        <input id="firstname" placeholder="First Name" style="color:black;" name="firstname" type="text" required autofocus class="infobox1">
+                        <input id="lastname" placeholder="Last Name" style="color:black;" name="lastname" type="text" required class="infobox2">
                     </div>
                     <div class="icon">
-                        <input placeholder="Email" style="color:black;" name="email" type="email" required class="infobox">
+                        <input id="email" placeholder="Email" style="color:black;" name="email" type="email" required class="infobox">
                     </div>
                     <div class="icon">
-                        <input placeholder="Username" style="color:black;" name="username" type="text" required class="infobox">
+                        <input id="username" placeholder="Username" style="color:black;" name="username" type="text" required class="infobox">
                     </div>
                     <div class="icon">
-                        <input placeholder="Password" style="color:black;" name="password" type="password" required class="infobox">
+                        <input id="password" placeholder="Password" style="color:black;" name="password" type="password" required class="infobox">
                     </div>
                     <div class="icon">
-                        <input placeholder="Confirm password" style="color:black;" name="Confirm-password" type="password" required class="infobox">
+                        <input id="confirmpassword" placeholder="Confirm password" style="color:black;" name="Confirm-password" type="password" required
+                            class="infobox">
                     </div>
 
                     <label class="checkbox-inline anim">
@@ -45,8 +48,8 @@
                         </span>
                     </label>
                     <div class="clear"></div>
-                    <input type="submit" style="color:white;" value="Register" class="regisbtn">
-                    </form>
+                    <button id="signUp" style="color:white;" class="regisbtn">Sign Up</button>
+                </div>
             </div>
         </div>
 

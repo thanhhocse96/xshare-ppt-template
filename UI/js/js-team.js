@@ -9,7 +9,7 @@ $(document).ready(function () {
             return;
         }
         $.ajax({
-            url: './php/login.php',
+            url: './php/signin.php',
             type: 'POST',
             data: {
                 username: $('#username').val(),
@@ -19,10 +19,10 @@ $(document).ready(function () {
             success: function (result) {
                 result = $.parseJSON(result);
                 if (result.status == 'OK') {
-                    if ($("#remember").is(":checked")) {
-                        setCookie("apiKey", result.apiKey, 30);
+                    setCookie("apiKey", result.apiKey, 30);
+                    setCookie("firstname", result.firstname, 30);
+                    if ($("#remember").is(":checked"))
                         setCookie("username", $('#username').val(), 30);
-                    }
                     window.location.href = "index.html";
                 } else {
                     alert(result.message);
@@ -36,6 +36,14 @@ $(document).ready(function () {
                 console.log("Request complete.");
             }
         })
+    });
+});
+
+$(document).ready(function () {
+    $('#signOutBtn').click(function (e) {
+        setCookie("apiKey", "", 30);
+        setCookie("firstname", "", 30);
+        window.location.href = "index.html";
     });
 });
 
@@ -62,11 +70,67 @@ function getCookie(cname) {
     return "";
 }
 
-$('#register')
-    .ajaxForm({
-        url: 'myscript.php', // or whatever
-        dataType: 'json',
-        success: function (response) {
-            alert("The server says: " + response);
+function checkUserSignedin() {
+    if (getCookie("firstname").length > 0) {
+        $("#welcomeUser").html("Welcome, " + getCookie('firstname'));
+        $('#welcome, #signOutBtn').css("display", "block");
+    } else {
+        $('#signInBtn, #signUpBtn').css("display", "block");
+    }
+}
+
+$(document).ready(function () {
+    $('#signUp').click(function (e) {
+        if (!$('#firstname').val()) {
+            alert('Please fill first name.');
+            return;
         }
+        if (!$('#lastname').val()) {
+            alert('Please fill last name.');
+            return;
+        }
+        if (!$('#email').val()) {
+            alert('Please fill email.');
+            return;
+        }
+        if (!$('#username').val()) {
+            alert('Please fill username.');
+            return;
+        }
+        if (!$('#password').val()) {
+            alert('Please fill password.');
+            return;
+        }
+        if ($('#password').val() != $('#confirmpassword').val()) {
+            alert('Password & confirm password not match');
+            return;
+        }
+        $.ajax({
+            url: './php/signup.php',
+            type: 'POST',
+            data: {
+                firstname: $('#firstname').val(),
+                lastname: $('#lastname').val(),
+                email: $('#email').val(),
+                username: $('#username').val(),
+                password: $('#password').val()
+            },
+            dataType: 'text',
+            success: function (result) {
+                result = $.parseJSON(result);
+                if (result.status == 'OK') {
+                    window.location.href = "login.html";
+                } else {
+                    alert(result.message);
+                }
+                console.log("success");
+            },
+            error: function (e) {
+                console.log(e);
+            },
+            complete: function () {
+                console.log("Request complete.");
+            }
+        })
     });
+});
