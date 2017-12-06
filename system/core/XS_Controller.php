@@ -18,8 +18,10 @@ class XS_Controller{
     protected $config = NULL;
     
 
-    public function __construct($is_controller = true){
-
+    public function __construct(){
+        require_once PATH_SYSTEM . '/core/loader/XS_Config_Loader.php';
+        $this->config = new XS_Config_Loader();
+        $this->config->load('config');
     }
 }
 ?>
