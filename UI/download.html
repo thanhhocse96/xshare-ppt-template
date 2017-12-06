@@ -18,7 +18,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-default navbar-expand-lg fixed-top search-navbar">
+    <!-- <nav class="navbar navbar-default navbar-expand-lg fixed-top search-navbar" id="non-login">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="./index.html">
@@ -48,6 +48,36 @@
                 </div>
             </div>
     </nav>
+-->
+    <nav class="navbar navbar-default navbar-expand-lg fixed-top search-navbar" id="in-login">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./src/images/Logo_white.png" alt="Logo" style="height:36px; margin-top:-10px; margin-left:20px;">
+                </a>
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="./profile.html" style="font-family: 'Open Sans', sans-serif;">Hi, Hien</a>
+                    </li>
+                    <li>
+                        <a href="./index.html" style="font-family: 'Open Sans', sans-serif;">
+                            <span class="glyphicon glyphicon-log-out"></span> Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <center>
         <div class="input-group input-group-md" style="height: 40px; width: 60%; margin-top: 5px;">
             <input type="text" class="form-control" placeholder="Enter Keywords" style="height: 40px; background: none;">
@@ -59,15 +89,20 @@
         </div>
     </center>
     <center>
-        <div style="margin-top: 10px;">
-            <input type="checkbox" > Web
-            <input type="checkbox" > PowerPoint
-            | 
-            <input type="checkbox" > Free Only
-            <input type="checkbox" > Start
-            <input type="text" placeholder="$0.0" style="width: 50px;">
-            to 
-            <input type="text" placeholder="$0.0" style="width: 50px;">
+        <div style="margin-top: 10px;" class="container-fluid">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 sort-1">
+                <input type="checkbox" > Web
+                <input type="checkbox" > PowerPoint
+            </div>
+            <div class="col-md-4 sort-2">
+                <input type="checkbox" > Free Only
+                <input type="checkbox" > Start
+                <input type="text" placeholder="$0.0" style="width: 50px;">
+                to 
+                <input type="text" placeholder="$0.0" style="width: 50px;">
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </center>
 
@@ -79,9 +114,6 @@
 
         <!-- Infomation -->
         <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 download-info">
-            <h3 class="downloadPageName">
-                <strong>Business Powerpoint Template</strong>
-            </h3>
             <img class="downloadPreview img-responsive" src="./src/images/ppt-template.JPG" alt="Preview">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">`
@@ -97,26 +129,25 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 download-info">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="row">
-                <h4>
-                    <strong>Preview</strong>
-                </h4>
-                <img class="download-preview" src="https://media.giphy.com/media/l0IsGvA3UwkTmKo6s/giphy.gif" alt="XShare preview">
-            </div>
-            <div class="row">
-                <h5>Name: Business PowerPoint template</h5>
-                <h5>Author:
+                <h3 class="downloadPageName download-info">
+                    <strong>Business Powerpoint Template</strong>
+                </h3>
+                <div class="card-footer2">
+                    <b class="text-muted2">&#9733; &#9733; &#9733; &#9733; &#9734;</b>
+                </div>
+                <h4>Author:
                     <a href="./index.html">XSHARE team</a>
-                </h5>
-                <h5>Licenses: MIT</h5>
-                <h5>Tags:
-                    <a href="#">Business</a>,
-                    <a href="#">PowerPoint</a>,
-                    <a href="#">Pitching</a>,
-                    <a href="#">Deep Learning</a>, 
-                    <a href="#">YouTube</a>, 
-                    <a href="#">Facebook</a>
+                </h3>
+                <h4>Licenses: MIT</h4>
+                <h5>
+                    <button class="tag-btn download-info">Business</button>
+                    <button class="tag-btn download-info">PowerPoint</button>
+                    <button class="tag-btn download-info">Pitching</button>
+                    <button class="tag-btn download-info">Deep Learning</button>
+                    <button class="tag-btn download-info">YouTube</button>
+                    <button class="tag-btn download-info">Facebook</button>
                 </h5>
             </div>
         </div>
