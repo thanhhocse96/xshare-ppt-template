@@ -61,3 +61,12 @@ function getCookie(cname) {
     }
     return "";
 }
+
+$('#myForm')
+    .ajaxForm({
+        url: 'myscript.php', // or whatever
+        dataType: 'json',
+        success: function (response) {
+            alert("The server says: " + response);
+        }
+    });
