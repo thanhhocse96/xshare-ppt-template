@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/js-team.js"></script>
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
     <title>Create new account - XSHARE</title>
 </head>
@@ -20,35 +22,34 @@
                         <img src="./src/images/Logo_white.png" class="sign-in-logo" alt="X share sign up logo">
                     </a>
                 </center>
-                <form action="#" method="post" class="form-login">
-                    <div >
-                        <input placeholder="First Name" style="color:black;" name="mail" type="email" required="" class="infobox1">
-                        <input placeholder="Last Name" style="color:black;" name="mail" type="email" required="" class="infobox2">
+                <div class="form-login">
+                    <div>
+                        <input id="firstname" placeholder="First Name" style="color:black;" name="firstname" type="text" required autofocus class="infobox1">
+                        <input id="lastname" placeholder="Last Name" style="color:black;" name="lastname" type="text" required class="infobox2">
                     </div>
                     <div class="icon">
-                        <input placeholder="Email" style="color:black;" name="mail" type="email" required="" class="infobox">
+                        <input id="email" placeholder="Email" style="color:black;" name="email" type="email" required class="infobox">
                     </div>
                     <div class="icon">
-                        <input placeholder="Username" style="color:black;" name="mail" type="email" required="" class="infobox">
+                        <input id="username" placeholder="Username" style="color:black;" name="username" type="text" required class="infobox">
                     </div>
                     <div class="icon">
-                        <input placeholder="Password" style="color:black;" name="Password" type="password" required="" class="infobox">
+                        <input id="password" placeholder="Password" style="color:black;" name="password" type="password" required class="infobox">
+                    </div>
+                    <div class="icon">
+                        <input id="confirmpassword" placeholder="Confirm password" style="color:black;" name="Confirm-password" type="password" required
+                            class="infobox">
                     </div>
 
-                    <div class="icon">
-                        <input placeholder="Confirm password" style="color:black;" name="Confirm-password" type="password" required="" class="infobox">
-                    </div>
-
-                    
                     <label class="checkbox-inline anim">
-                        <input type="checkbox" class="checkbox">
+                        <input id="accept" type="checkbox" class="checkbox">
                         <span>Accept
                             <a href="#" style="color:black;">Terms of Service</a>
                         </span>
                     </label>
                     <div class="clear"></div>
-                    <input type="submit" style="color:white;" value="Register" class="regisbtn">
-                </form>
+                    <button id="signUp" style="color:white;" class="regisbtn">Sign Up</button>
+                </div>
             </div>
         </div>
 
@@ -56,48 +57,48 @@
     <!-- Footer -->
     <footer class="container-fluid footer-style">
         <div class="col-md-6">
-        <img src="src/images/Logo-blue.png" alt="" style="height: 40px;">
-        <br>
-        <br>
-        <p class="footer-infor">The product of My Group - Web Programming</p>
-        <p class="footer-infor">Computer Science and Engineering Faculty</p>
+            <img src="src/images/Logo-blue.png" alt="" style="height: 40px;">
+            <br>
+            <br>
+            <p class="footer-infor">The product of My Group - Web Programming</p>
+            <p class="footer-infor">Computer Science and Engineering Faculty</p>
         </div>
         <div class="col-md-6">
-        <div class="row">
-            <div style="margin-top:20px; margin-bottom:30px; padding-left:15px;">
-            <a href="#">
-                <strong>Private Policy</strong>
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">
-                <strong>Email</strong>
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">
-                <strong>Donate</strong>
-            </a>
+            <div class="row">
+                <div style="margin-top:20px; margin-bottom:30px; padding-left:15px;">
+                    <a href="#">
+                        <strong>Private Policy</strong>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <strong>Email</strong>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#">
+                        <strong>Donate</strong>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6" style="padding:0;">
-            <div class="col-md-8 " style="padding:0;">
-            <p class="footer-infor">Huỳnh Hồng Hiển</p>
-            <p class="footer-infor">Lê Xuân Hải</p>
+            <div class="col-lg-6" style="padding:0;">
+                <div class="col-md-8 " style="padding:0;">
+                    <p class="footer-infor">Huỳnh Hồng Hiển</p>
+                    <p class="footer-infor">Lê Xuân Hải</p>
+                </div>
+                <div class="col-lg-4" style="padding:0;">
+                    <p class="footer-infor">1411239</p>
+                    <p class="footer-infor">1411055</p>
+                </div>
             </div>
-            <div class="col-lg-4" style="padding:0;">
-            <p class="footer-infor">1411239</p>
-            <p class="footer-infor">1411055</p>
+            <div class="col-lg-6" style="padding:0;">
+                <div class="col-md-8" style="padding:0;">
+                    <p class="footer-infor">Hồ Quang Thanh</p>
+                    <p class="footer-infor">Hồ Ngọc Sơn</p>
+                </div>
+                <div class="col-lg-4" style="padding:0;">
+                    <p class="footer-infor">1413494</p>
+                    <p class="footer-infor">1413289</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6" style="padding:0;">
-            <div class="col-md-8" style="padding:0;">
-            <p class="footer-infor">Hồ Quang Thanh</p>
-            <p class="footer-infor">Hồ Ngọc Sơn</p>
-            </div>
-            <div class="col-lg-4" style="padding:0;">
-            <p class="footer-infor">1413494</p>
-            <p class="footer-infor">1413289</p>
-            </div>
-        </div>
         </div>
     </footer>
 </body>

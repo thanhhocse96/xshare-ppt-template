@@ -11,7 +11,8 @@
   <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+  <script src="./js/js-team.js"></script>
+
   <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
   <title>XSHARE - Your Slide Will Fly</title>
 </head>
@@ -55,14 +56,24 @@
             <li>
               <a href="./search-result.html">Powerpoint</a>
             </li>
-            <li>
+            <li id="signInBtn" style="display: none">
               <a href="./login.html">
-                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                <span class="glyphicon glyphicon-log-in"></span> Sign In</a>
             </li>
-            <li>
+            <li id="signUpBtn" style="display: none">
               <a href="./sign-up.html">
                 <span class="glyphicon glyphicon-user"></span> Sign Up</a>
             </li>
+            <li id="welcome" style="display: none">
+              <a id="welcomeUser" href="./index.html">asdasd</a>
+            </li>
+            <li id="signOutBtn" style="display: none">
+              <a href="./index.html">
+                <span class="glyphicon glyphicon-log-in"></span> Sign Out</a>
+            </li>
+            <script>
+              checkUserSignedin();
+            </script>
           </ul>
         </div>
       </div>
@@ -71,7 +82,7 @@
 
   <!--Top list -->
   <div class="container-fluid">
-    
+
     <div class="container result-title">
       <h3>
         <strong>Top PowerPoint templates</strong>
@@ -82,7 +93,7 @@
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download.html">
                 <div class="overlay">
@@ -109,7 +120,7 @@
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download.html">
                 <div class="overlay">
@@ -136,7 +147,7 @@
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/ppt-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download.html">
                 <div class="overlay">
@@ -173,7 +184,7 @@
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download-web.html">
                 <div class="overlay">
@@ -181,14 +192,13 @@
                 </div>
               </a>
             </div>
-    
+
             <div class="card-body">
               <h4 class="card-title">
                 <a href="./download-web.html">Business Web template</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the
-                deal.
+              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the deal.
               </p>
             </div>
             <div class="card-footer">
@@ -196,11 +206,11 @@
             </div>
           </div>
         </div>
-    
+
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download-web.html">
                 <div class="overlay">
@@ -208,14 +218,13 @@
                 </div>
               </a>
             </div>
-    
+
             <div class="card-body">
               <h4 class="card-title">
                 <a href="./download-web.html">Business Web template</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the
-                deal.
+              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the deal.
               </p>
             </div>
             <div class="card-footer">
@@ -223,11 +232,11 @@
             </div>
           </div>
         </div>
-    
+
         <div class="col-lg-4 col-md-6 mb-4 template-container">
           <div class="card h-100">
             <div class="template-container">
-              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template" >
+              <img class="card-img-top" src="./src/images/web-template.JPG" alt="Xshare PPT template">
               <!--Overlay-->
               <a class="live-preview" href="./download-web.html">
                 <div class="overlay">
@@ -235,14 +244,13 @@
                 </div>
               </a>
             </div>
-    
+
             <div class="card-body">
               <h4 class="card-title">
                 <a href="./download-web.html">Business Web template</a>
               </h4>
               <h5>$24.99</h5>
-              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the
-                deal.
+              <p class="card-text">Business Web template use for business pitching, that's make your pitch become smooth and easy to win the deal.
               </p>
             </div>
             <div class="card-footer">
