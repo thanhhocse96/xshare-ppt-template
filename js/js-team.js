@@ -134,3 +134,55 @@ $(document).ready(function () {
         })
     });
 });
+
+$(document).ready(function () {
+    $('#saveBtn').click(function (e) {
+        if (!$('#firstname').val()) {
+            alert('Please fill first name.');
+            return;
+        }
+        if (!$('#lastname').val()) {
+            alert('Please fill last name.');
+            return;
+        }
+        if (!$('#oldpassword').val()) {
+            alert('Please fill old password.');
+            return;
+        }
+        if (!$('#newpassword').val()) {
+            alert('Please fill new password.');
+            return;
+        }
+        if ($('#newpassword').val() != $('#confirmpassword').val()) {
+            alert('New password & confirm password not match');
+            return;
+        }
+        $.ajax({
+            url: './php/edit_info.php',
+            type: 'POST',
+            data: {
+                firstname: $('#firstname').val(),
+                lastname: $('#lastname').val(),
+                username: getCookie('username'),
+                oldpassword: $('#oldpassword').val(),
+                newpassword: $('#newpassword').val()
+            },
+            dataType: 'text',
+            success: function (result) {
+                result = $.parseJSON(result);
+                if (result.status == 'OK') {
+                    window.location.href = "index.html";
+                } else {
+                    alert(result.message);
+                }
+                console.log("success");
+            },
+            error: function (e) {
+                console.log(e);
+            },
+            complete: function () {
+                console.log("Request complete.");
+            }
+        })
+    });
+});
