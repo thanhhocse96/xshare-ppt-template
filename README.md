@@ -8,7 +8,7 @@ Hiện thực XSHARE sử dụng PHP MVC 
 ## Sử dụng để làm gì?
 
 Đây là phiên bản đầy đủ của trang web XSHARE - là nơi chia sẻ, chỉnh sửa các template Powerpoint.
-Demo của phiên bản UI: https://tđủhanhhocse96.github.io/ppt-template-sharing/
+Demo của phiên bản UI: https://thanhhocse96.github.io/ppt-template-sharing/
 Bản đầy đủ giao diện và chức năng: 
 
 ## Đóng góp thêm
