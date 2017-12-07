@@ -11,7 +11,8 @@
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script src="./js/js-team.js"></script>
+    
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
     <title>Download - XSHARE</title>
 </head>
@@ -65,14 +66,24 @@
 
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="./profile.html" style="font-family: 'Open Sans', sans-serif;">Hi, Hien</a>
-                    </li>
-                    <li>
-                        <a href="./index.html" style="font-family: 'Open Sans', sans-serif;">
-                            <span class="glyphicon glyphicon-log-out"></span> Log Out
-                        </a>
-                    </li>
+                        <li id="signInBtn" style="display: none">
+                                <a href="./login.html">
+                                <span class="glyphicon glyphicon-log-in"></span> Sign In</a>
+                            </li>
+                            <li id="signUpBtn" style="display: none">
+                                <a href="./sign-up.html">
+                                <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                            </li>
+                            <li id="welcome" style="display: none">
+                                <a id="welcomeUser" href="./index.html"></a>
+                            </li>
+                            <li id="signOutBtn" style="display: none">
+                                    <a href="./index.html">
+                                        <span class="glyphicon glyphicon-log-in"></span> Sign Out</a>
+                                    </li>
+                            <script>
+                                checkUserSignedin();
+                            </script>
                 </ul>
             </div>
         </div>
