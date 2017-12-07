@@ -9,6 +9,8 @@ CREATE TABLE `users` (
    `email` varchar(100),
    PRIMARY KEY(id)
 );
+
+
 -- User1 - pass: 123
 INSERT INTO users VALUES(0,'user1','202cb962ac59075b964b07152d234b70', 'Hai', 'Le', 'user1@gmail.com');
 -- User2 - pass: 123

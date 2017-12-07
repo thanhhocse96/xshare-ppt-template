@@ -263,6 +263,7 @@ button:focus {
   color: #ffffff;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
+  text-align: center;
 }
 
 .sign-in-form a{
