@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xshare</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <script>
+        function a() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200)
+                    document.getElementById("mytable").innerHTML = this.responseText;
+            }
+            xmlhttp.open("POST", "php/queryuser.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send();
+        }
+    </script>
+    <table>
+        <tr>
+            <td style="width: 46px;">Id</td>
+            <td style="width: 96px;">username</td>
+            <td style="width: 104px;">firstname</td>
+            <td style="width: 105px;">lastname</td>
+            <td style="width: 237px;">email</td>
+        </tr>
+    </table>
+    <table id="mytable">
+
+    </table><br><br>
+    <center>
+        <button class="btn" onclick="a()">Load user</button>
+    </center>
+</body>
+</html>
