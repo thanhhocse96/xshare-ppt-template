@@ -5,7 +5,7 @@ $uploadOk = 1;
 $FileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 
- 
+$localhostpage="http://localhost/xshare-ppt-template/";
 $upload_page = "<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">";
 $upload_page .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/bootstrap/bootstrap.css\"> <link rel=\"stylesheet\" type=\"text/css\" href=\"../css/style.css\"> ";
 $upload_page .= "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>";
@@ -13,7 +13,7 @@ $upload_page .="<script src=\"../js/js-team.js\"></script>";
 $upload_page .= "<link rel=\"shortcut icon\" href=\"../src/images/Xshare.png\" type=\"image/x-icon\">";
 $upload_page .="<title>Login - XSHARE</title> </head>";
 $upload_page .= "<body><div class=\"loginPage\" style=\"height: 100%;\">";
-$upload_page .= "<div class=\"row align-centerjustify-content-center\"style=\"color: white; margin: auto\"><a class=\"\" href=\"./index.html\"><img src=\"../src/images/Logo_white.png\" alt=\"Logo\" style=\"height:75px; margin:auto;\"></a>";
+$upload_page .= "<div class=\"row align-centerjustify-content-center\"style=\"color: white; margin: auto\"><a class=\"\" href=\"".$localhostpage."\"><img src=\"../src/images/Logo_white.png\" alt=\"Logo\" style=\"height:75px; margin:auto;\"></a>";
 
 if($FileType != "zip" && $FileType != "rar" && $FileType != "ppt"
 && $FileType != "pptx" ) {
