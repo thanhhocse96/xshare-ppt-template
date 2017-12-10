@@ -123,6 +123,8 @@ function checkUserSignedin() {
     }
     if (getCookie("admin") == '*')
         $('#adminBtn').css("display", "block");
+    else
+        $('#uploadBtn').css("display", "block");
 }
 
 function loadUser() {
