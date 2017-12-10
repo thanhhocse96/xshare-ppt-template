@@ -24,8 +24,8 @@ $dbConnect = $dbReference->connectDB();
 if ($dbConnect == NULL) {
     $dbReference->sendResponse(503,'{"error":'.$dbReference->getStatusCodeMeeage(503)."}");
 } else{
-    $sql = "INSERT INTO users (username, apiKey, firstname, lastname, email)
-    VALUES ('" . $username . "','" . md5($password) ."','" . $firstname . "', '". $lastname . "', '" . $email . "')";
+    $sql = "INSERT INTO users (username, apiKey, firstname, lastname, email, admin)
+    VALUES ('" . $username . "','" . md5($password) ."','" . $firstname . "', '". $lastname . "', '" . $email . "', ' ')";
      
     if ($dbConnect->query($sql)) {
         $dbReference->sendResponse(200,'{"status":"OK","message": "Insert success."}');
