@@ -4,7 +4,7 @@ var passwordregex = /^[a-zA-Z0-9]+$/;
 var emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 $(document).ready(function () {
-    $("#username,#password,#firstname,#lastname,#confirmpassword,#currentpassword,#newpassword").keypress(function (e) {
+    $(":text,:password").keypress(function (e) {
         if (e.keyCode == 13) {
             switch (window.location.href) {
                 case 'http://localhost:808/sign-in.html':
