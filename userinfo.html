@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Xshare</title>
     <meta charset="utf-8">
@@ -15,21 +16,23 @@
             border-collapse: collapse;
             width: 100%;
         }
-        
-        td, th {
+
+        td,
+        th {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
-        
+
         tr:nth-child(even) {
             background-color: #dddddd;
         }
-        </style>
+    </style>
 </head>
-<body>
+
+<body onload="loadUser()">
     <script>
-        function a() {
+        function loadUser() {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200)
@@ -40,20 +43,16 @@
             xmlhttp.send();
         }
     </script>
-    <table>
-        <tr>
-            <td style="width: 46px;">Id</td>
-            <td style="width: 96px;">username</td>
-            <td style="width: 104px;">firstname</td>
-            <td style="width: 105px;">lastname</td>
-            <td style="width: 237px;">email</td>
-        </tr>
-    </table>
-    <table id="mytable">
 
-    </table><br><br>
     <center>
-        <button class="btn" onclick="a()">Load user</button>
+        <br>
+        <button id="refresh" class="btn" onclick="loadUser()">Refresh</button>
+        <br>
+        <br>
+        <table id="mytable">
+
+        </table>
     </center>
 </body>
+
 </html>

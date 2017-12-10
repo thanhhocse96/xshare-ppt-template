@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    $("#username,#password").keypress(function (e) {
+        if (e.keyCode == 13) {
+            if (window.location.href == 'http://localhost:808/sign-in.html')
+                $("#signIn").click();
+            if (window.location.href == 'http://localhost:808/sign-up.html')
+                $("#signUp").click();
+            if (window.location.href == 'http://localhost:808/profile.html')
+                $("#saveBtn").click();
+        }
+    });
+})
+
+$(document).ready(function () {
     $('#signIn').click(function (e) {
         if (!$('#username').val()) {
             alert('Please fill username.');
@@ -21,6 +34,7 @@ $(document).ready(function () {
                 if (result.status == 'OK') {
                     setCookie("apiKey", result.apiKey, 30);
                     setCookie("firstname", result.firstname, 30);
+                    setCookie("admin", result.admin, 30);
                     if ($("#remember").is(":checked"))
                         setCookie("username", $('#username').val(), 30);
                     window.location.href = "index.html";
@@ -43,6 +57,7 @@ $(document).ready(function () {
     $('#signOutBtn').click(function (e) {
         setCookie("apiKey", "", 30);
         setCookie("firstname", "", 30);
+        setCookie("admin", "", 30);
         window.location.href = "index.html";
     });
 });
@@ -77,6 +92,39 @@ function checkUserSignedin() {
     } else {
         $('#signInBtn, #signUpBtn').css("display", "block");
     }
+    if (getCookie("admin") == '*')
+        $('#adminBtn').css("display", "block");
+}
+
+function loadUser() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+            document.getElementById("mytable").innerHTML = this.responseText;
+    }
+    xmlhttp.open("POST", "php/queryuser.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+}
+
+function deleteUser() {
+    var id = document.getElementById("id").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == "* ID phải là số nguyên")
+                alert("* ID phải là số nguyên");
+            else
+            if (this.responseText == "Success!") {
+                loadUser();
+            } else {
+                alert(this.responseText);
+            }
+        }
+    }
+    xmlhttp.open("POST", "php/deleteuser.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("id=" + id);
 }
 
 $(document).ready(function () {
