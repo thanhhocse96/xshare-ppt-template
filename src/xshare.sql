@@ -11,7 +11,13 @@ CREATE TABLE `users` (
    PRIMARY KEY(id)
 );
 
-
+CREATE TABLE `upload` (
+    `uploadid` int UNIQUE NOT NULL AUTO_INCREMENT,
+    `filepath` VARCHAR(300),
+    `userid` int,
+    PRIMARY KEY (uploadid),
+    FOREIGN KEY (userid) REFERENCES users(id)
+);
 -- User1 - pass: 123 - normal
 INSERT INTO users VALUES(0,'user1','202cb962ac59075b964b07152d234b70', 'Hai', 'Le', 'user1@gmail.com', ' ');
 -- User2 - pass: 123 - normal
