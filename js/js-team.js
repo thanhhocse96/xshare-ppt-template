@@ -318,8 +318,8 @@ $(document).ready(function () {
                 return;
             }
         }
-        if (!$('#oldpassword').val()) {
-            alert('Please fill old password.');
+        if (!$('#currentpassword').val()) {
+            alert('Please fill current password.');
             return;
         }
         if (!$('#newpassword').val()) {

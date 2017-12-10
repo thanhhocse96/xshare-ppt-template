@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="./js/js-team.js"></script>
     <title>Upload - XSHARE</title>
 </head>
 
@@ -97,13 +98,35 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="./profile.html" style="font-family: 'Open Sans', sans-serif;">Hi, Hien</a>
-                    </li>
-                    <li>
-                        <a href="./index.html" style="font-family: 'Open Sans', sans-serif;">
-                            <span class="glyphicon glyphicon-log-out"></span> Log Out
-                        </a>
-                    </li>
+                        <a href="./search-result-web.html">Web</a>
+                      </li>
+                      <li>
+                        <a href="./search-result.html">Powerpoint</a>
+                      </li>
+                      <li id="signInBtn" style="display: none">
+                        <a href="./sign-in.html">
+                          <span class="glyphicon glyphicon-log-in"></span> Sign In</a>
+                      </li>
+                      <li id="signUpBtn" style="display: none">
+                        <a href="./sign-up.html">
+                          <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                      </li>
+                      <li id="welcome" style="display: none">
+                        <a id="welcomeUser" href="./profile.html"></a>
+                      </li>
+                      <li id="adminBtn" style="display: none">
+                        <a href="./admin.html">Admin Page</a>
+                      </li>
+                      <li id="uploadBtn" style="display: none">
+                        <a href="./upload.html">Upload</a>
+                      </li>
+                      <li id="signOutBtn" style="display: none">
+                        <a href="./index.html">
+                          <span class="glyphicon glyphicon-log-in"></span> Sign Out</a>
+                      </li>
+                      <script>
+                        checkUserSignedin();
+                      </script>
                 </ul>
             </div>
         </div>
