@@ -11,6 +11,13 @@ CREATE TABLE `users` (
    PRIMARY KEY(id)
 );
 
+CREATE TABLE `upload` (
+    `uploadid` int UNIQUE NOT NULL AUTO_INCREMENT,
+    `filepath` VARCHAR(300),
+    `userid` int,
+    PRIMARY KEY (uploadid),
+    FOREIGN KEY (userid) REFERENCES users(id)
+);
 CREATE TABLE products (
 	id int UNIQUE NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL,
