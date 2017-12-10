@@ -4,6 +4,26 @@ var passwordregex = /^[a-zA-Z0-9]+$/;
 var emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 $(document).ready(function () {
+    $("#username,#password,#firstname,#lastname,#confirmpassword,#currentpassword,#newpassword").keypress(function (e) {
+        if (e.keyCode == 13) {
+            switch (window.location.href) {
+                case 'http://localhost:808/sign-in.html':
+                    $("#signIn").click();
+                    break;
+                case 'http://localhost:808/sign-up.html':
+                    $("#signUp").click();
+                    break;
+                case 'http://localhost:808/profile.html':
+                    $("#saveBtn").click();
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+})
+
+$(document).ready(function () {
     $('#signIn').click(function (e) {
         if (!$('#username').val()) {
             alert('Please fill username.');
@@ -44,8 +64,8 @@ $(document).ready(function () {
                 if (result.status == 'OK') {
                     setCookie("apiKey", result.apiKey, 30);
                     setCookie("firstname", result.firstname, 30);
-                    if ($("#remember").is(":checked"))
-                        setCookie("username", $('#username').val(), 30);
+                    setCookie("admin", result.admin, 30);
+                    setCookie("username", $('#username').val(), 30);
                     window.location.href = "index.html";
                 } else {
                     alert(result.message);
@@ -66,6 +86,7 @@ $(document).ready(function () {
     $('#signOutBtn').click(function (e) {
         setCookie("apiKey", "", 30);
         setCookie("firstname", "", 30);
+        setCookie("admin", "", 30);
         window.location.href = "index.html";
     });
 });
@@ -100,6 +121,64 @@ function checkUserSignedin() {
     } else {
         $('#signInBtn, #signUpBtn').css("display", "block");
     }
+    if (getCookie("admin") == '*')
+        $('#adminBtn').css("display", "block");
+}
+
+function loadUser() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200)
+            document.getElementById("mytable").innerHTML = this.responseText;
+    }
+    xmlhttp.open("POST", "php/queryuser.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+}
+
+function deleteUser() {
+    var id = document.getElementById("id").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == "* ID phải là số nguyên")
+                alert("* ID phải là số nguyên");
+            else
+            if (this.responseText == "Success!") {
+                loadUser();
+            } else {
+                alert(this.responseText);
+            }
+        }
+    }
+    xmlhttp.open("POST", "php/deleteuser.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send("id=" + id);
+}
+
+function getOldInfo() {
+    $.ajax({
+        url: './php/getOldInfo.php',
+        type: 'POST',
+        data: {
+            username: getCookie("username")
+        },
+        dataType: 'text',
+        success: function (result) {
+            result = $.parseJSON(result);
+            if (result.status == "OK") {
+                $("#firstname").val(result.firstname);
+                $("#lastname").val(result.lastname);
+            } else {}
+            console.log("success");
+        },
+        error: function (e) {
+            console.log(e);
+        },
+        complete: function () {
+            console.log("Request complete.");
+        }
+    })
 }
 
 $(document).ready(function () {
@@ -190,7 +269,7 @@ $(document).ready(function () {
             success: function (result) {
                 result = $.parseJSON(result);
                 if (result.status == 'OK') {
-                    window.location.href = "login.html";
+                    window.location.href = "sign-in.html";
                 } else {
                     alert(result.message);
                 }
@@ -263,13 +342,15 @@ $(document).ready(function () {
                 firstname: $('#firstname').val(),
                 lastname: $('#lastname').val(),
                 username: getCookie('username'),
-                oldpassword: $('#oldpassword').val(),
+                currentpassword: $('#currentpassword').val(),
                 newpassword: $('#newpassword').val()
             },
             dataType: 'text',
             success: function (result) {
                 result = $.parseJSON(result);
                 if (result.status == 'OK') {
+                    setCookie("firstname", $('#firstname').val(), 30);
+                    alert('Edit information success.');
                     window.location.href = "index.html";
                 } else {
                     alert(result.message);

@@ -34,7 +34,7 @@ if ($dbConnect == NULL) {
                 if ($apiKey != $row['apiKey'])
                     $dbReference->sendResponse(200,'{"status":"error","message": "Wrong password"}');        
                 else
-                    $dbReference->sendResponse(200,'{"status":"OK","username":"'. $row['username'] .'", "apiKey":"'.$apiKey. '", "firstname":"'.$row['firstname'] .'"}');
+                    $dbReference->sendResponse(200,'{"status":"OK","username":"'. $row['username'] .'", "apiKey":"'.$apiKey. '", "firstname":"'.$row['firstname'] . '", "admin":"' . $row['admin'] .'"}');
                 return;
             }
         }

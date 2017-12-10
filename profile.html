@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./js/js-team.js"></script>
     <link rel="shortcut icon" href="./src/images/Xshare.png" type="image/x-icon">
-    <title>Create new account - XSHARE</title>
+    <title>Edit Info - XSHARE</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                         <input id="lastname" placeholder="Last Name" style="color:black;" name="lastname" type="text" required class="infobox2">
                     </div>
                     <div class="icon">
-                        <input id="oldpassword" placeholder="Old Password" style="color:black;" name="password" type="password" required class="infobox">
+                        <input id="currentpassword" placeholder="Current Password" style="color:black;" name="password" type="password" required class="infobox">
                     </div>
                     <div class="icon">
                         <input id="newpassword" placeholder="New Password" style="color:black;" name="password" type="password" required class="infobox">
@@ -45,6 +45,9 @@
                         <button id="saveBtn" style="color:white;" class="regisbtn">Save</button>
                     </div>
                 </div>
+                <script>
+                    getOldInfo();
+                </script>
                 <!-- </form> -->
             </div>
         </div>

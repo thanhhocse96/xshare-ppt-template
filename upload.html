@@ -66,7 +66,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="./login.html" style="font-family: 'Open Sans', sans-serif;">
+                            <a href="./sign-in.html" style="font-family: 'Open Sans', sans-serif;">
                                 <span class="glyphicon glyphicon-log-in"></span> Login
                             </a>
                         </li>
@@ -112,25 +112,25 @@
     <div class="container-fluid loginPage">
         <form action="php/upload.php" method="post" enctype="multipart/form-data">
             <div class="col-lg-6 col-md-6 upload-form align-center justify-content-center">
-                
-                    <div class="icon1">
-                        <input placeholder="Name" style="color:black;" name="mail" type="name" required="" class="upload-name">
-                    </div>
 
-                    <div class="icon2">
-                        <input placeholder="Price" style="color:black;" name="Price" type="text" required="" class="upload-price">
-                    </div>
+                <div class="icon1">
+                    <input placeholder="Name" style="color:black;" name="mail" type="name" required="" class="upload-name">
+                </div>
 
-                    <div class="icon3">
-                        <input placeholder="licenses" style="color:black;" name="Licenses" type="text" required="" class="upload-licenses">
-                    </div>
+                <div class="icon2">
+                    <input placeholder="Price" style="color:black;" name="Price" type="text" required="" class="upload-price">
+                </div>
 
-                    <div class="clear"></div>
-                    
-                    <div style="margin: 20px;">
-                        <input type="submit" class="btn btn-default login-btn" value="Upload" name="submit">
-                    </div>
-                
+                <div class="icon3">
+                    <input placeholder="licenses" style="color:black;" name="Licenses" type="text" required="" class="upload-licenses">
+                </div>
+
+                <div class="clear"></div>
+
+                <div style="margin: 20px;">
+                    <input type="submit" class="btn btn-default login-btn" value="Upload" name="submit">
+                </div>
+
             </div>
             <div class="col-lg-6 col-md-6 align-center justify-content-center">
                 <div class="wrapper">
@@ -188,8 +188,7 @@
                                 return function (e) {
                                     // Render thumbnail.
                                     var span = document.createElement('span');
-                                    span.innerHTML = [escape(theFile.name)
-                                    ].join('');
+                                    span.innerHTML = [escape(theFile.name)].join('');
                                     document.getElementById('list').insertBefore(span, null);
                                 };
                             })(f);
@@ -202,7 +201,7 @@
                     $('#files').change(handleFileSelect);
                 </script>
             </div>
-        </form>    
+        </form>
     </div>
     <!-- Footer -->
     <footer class="container-fluid footer-style">
