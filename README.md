@@ -23,16 +23,16 @@ Bản đầy đủ giao diện và chức năng:
 
 ## Teams: students in CSE faculty BKU
 
-Hồ Quang Thanh - thanh.hoquangcse96@gmail.com
+Hồ Thanh
 
 
-Huỳnh Hồng Hiển
+Huỳnh Hiển
 
 
-Lê Xuân Hải
+Lê Hải
 
 
-Hồ Ngọc Sơn
+Hồ Sơn
 
 
 ## License
